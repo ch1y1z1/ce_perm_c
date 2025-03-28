@@ -3,10 +3,23 @@ revision = 1
 requires-python = "==3.9.*"
 
 [[package]]
+name = "autograd"
+version = "1.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/28/ed/67975d75c0fe71220c8df2370c6c1390805790a641359b502f39c042c0c1/autograd-1.7.0.tar.gz", hash = "sha256:de743fd368d6df523cd37305dcd171861a9752a144493677d2c9f5a56983ff2f", size = 2564855 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6d/90/d13cf396989052cadd8511c1878b0913bbce28eeef5feb95710a92e03076/autograd-1.7.0-py3-none-any.whl", hash = "sha256:49680300f842f3a8722b060ac0d3ed7aca071d1ad4d3d38c9fdadafdcc73c30b", size = 52522 },
+]
+
+[[package]]
 name = "ce-perm-c"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "autograd" },
     { name = "meson" },
     { name = "meson-python" },
     { name = "numpy" },
@@ -16,6 +29,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "autograd", specifier = ">=1.7.0" },
     { name = "meson", specifier = ">=1.0.0" },
     { name = "meson-python", specifier = ">=0.13.0" },
     { name = "numpy", specifier = "<2.0" },

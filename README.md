@@ -14,8 +14,9 @@ python -m pip install .
 pytest
 ```
 
-please look at this example at `examples/test_spsolve.py` for usage
+please look at this example at `examples` folder for usage
 
 ## TODO
 
-- fit into ceviche
+- add more tests
+- CI / CD
