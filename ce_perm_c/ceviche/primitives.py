@@ -202,7 +202,7 @@ def grad_sp_solve_entries_reverse(x, entries, indices, b, perm_c):
     i, j = indices
 
     def vjp(v):
-        adj = sp_solve(entries, indices_T, -v)
+        adj = sp_solve_with_perm_c(entries, indices_T, -v, perm_c)
         return adj[i] * x[j]
 
     return vjp
@@ -213,7 +213,7 @@ def grad_sp_solve_b_reverse(ans, entries, indices, b, perm_c):
     indices_T = transpose_indices(indices)
 
     def vjp(v):
-        return sp_solve(entries, indices_T, v)
+        return sp_solve_with_perm_c(entries, indices_T, v, perm_c)
 
     return vjp
 

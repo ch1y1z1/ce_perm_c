@@ -4,7 +4,7 @@ from ce_perm_c.ceviche import fdfd_ez, my_fdfd_ez
 
 
 def timing_fdfd_ez_vs_my_fdfd_ez():
-    """Test that my_fdfd_ez produces the same results as fdfd_ez"""
+    """Compare the timing of fdfd_ez and my_fdfd_ez"""
     # Setup parameters
     omega = 2 * np.pi * 200e12  # 200 THz / 1.5 um
     dL = 5e-8  # 50 nanometers
