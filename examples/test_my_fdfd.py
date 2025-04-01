@@ -21,6 +21,9 @@ def test_fdfd_ez_vs_my_fdfd_ez():
     F_my = my_fdfd_ez(omega, dL, eps_r, npml)
 
     for _ in range(10):
+        eps_r = np.random.random((Nx, Ny))
+        F_original = fdfd_ez(omega, dL, eps_r, npml)
+        F_my = my_fdfd_ez(omega, dL, eps_r, npml)
         Hx_original, Hy_original, Ez_original = F_original.solve(source)
         Hx_my, Hy_my, Ez_my = F_my.solve(source)
 
